@@ -214,7 +214,7 @@ export default {
 <style>
 
 .modelPageBody {
-    
+    background-color: #181729;
     background-image: url('../assets/backgroundModelPage.png');
     background-image: no-repeat;
     height: 100%;
@@ -251,6 +251,7 @@ export default {
 .modelPageSmallImg {
     border-radius: 5px;
     width: 100%;
+    cursor: pointer;
 }
 
 .modelPageFirstInfoFild{
@@ -267,6 +268,7 @@ export default {
     padding: 5px;
     border: none;
     background-color: #9a9a9a00;
+    cursor: pointer;
 
     transition: background  .2s linear;
 }
@@ -295,6 +297,8 @@ export default {
     font-size: 26px;
     line-height: 35px;
     color: white;
+
+    cursor: default;
 }
 
 .modelPageBuyMenu {
@@ -324,6 +328,7 @@ export default {
     font-size: 24px;
     font-weight: 600;
     color: #747474;
+    cursor: pointer;
 
     transition: background .2s linear, color .2s linear;
 }
@@ -338,6 +343,7 @@ export default {
     background-color: #44444400;
     width: 50px;
     height: 50px;
+    cursor: pointer;
 }
 
 .modelPageAtfBtn img {
@@ -357,6 +363,9 @@ export default {
     font-weight: 400;
     font-size: 20px;
     color: white;
+    cursor: default;
+
+    user-select: none;
 }
 
 .modelPageThridInfoFild {
@@ -381,6 +390,7 @@ export default {
 .modelPageParams {
     display: flex;
     justify-content: space-between;
+    cursor: default;
 }
 
 .modelPageParamsState {

@@ -44,5 +44,8 @@ export default createRouter ({
             path: "/:catchAll(.*)",
             redirect: '/404'
         }
-    ]
+    ],
+    scrollBehavior() {
+        return { top: null }
+    }
 })
