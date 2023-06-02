@@ -5,7 +5,7 @@
     
     
 
-    <div class="manePart">
+    <div class="manePart" :style="{ backgroundImage: backgroundUrl }">
 
       <vPopup
         v-show="isInfoPopupVisible"
@@ -27,7 +27,8 @@
           <button class="ButtonBitch" @click="showPopupInfo">Log out</button>
 
 
-          <button class="ButtonBitch">Change the background</button>
+          <button class="ButtonBitch" @click="openFileDialog" >Change the background</button>
+          <input type="file" ref="fileInput" style="display: none" @change="handleFileChange">
         </div>
       </div>
       <div class="BottomBlock">
@@ -372,6 +373,7 @@ export default {
 },
   data(){
     return{
+      backgroundUrl: '',
       isInfoPopupVisible: false,
       isProfileVisable: false,
       isModelsVisable: false,
@@ -381,7 +383,13 @@ export default {
     
   },
   methods: {
-    
+    openFileDialog() {
+this.$refs.fileInput.click();
+},
+handleFileChange(event) {
+const file = event.target.files[0];
+this.backgroundUrl = `url(${URL.createObjectURL(file)})`;
+},
     showPopupInfo(){
       this.isInfoPopupVisible = true;
     },
