@@ -1,6 +1,10 @@
 <template>
   <div class="bodyProfile" >
-    <header-part />
+
+    <div class="headerContaineProfile">
+      <header-part />
+    </div>
+    
     
     
     
@@ -425,6 +429,10 @@ export default {
     margin: 0px;
   }
   
+.headerContaineProfile{
+  background-color: #000000;
+}
+
   .bodyProfile {
   background: -webkit-linear-gradient(left, #25c481, #25b7c4);
   background: linear-gradient(to right, #25c481, #25b7c4);
@@ -438,7 +446,7 @@ export default {
     background-position:center;
     background-repeat:no-repeat;
     background-size: cover;
-    padding: 100px 100px 100px 100px
+    padding: 10px 0px
   }
   .block{
     margin-top: 10px;

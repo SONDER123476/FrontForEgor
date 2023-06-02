@@ -1,39 +1,33 @@
 <template>
-    <div class="LoginReg"  v-click-outside="away" >
+	<div class="sign-inContainer">
+		<div class="LoginReg"  v-click-outside="away" >
+			<body class="bdb">
+				<div class="main"> 
+					
+					<input class="gg" type="checkbox" id="chk" aria-hidden="true">
+					<button id='close' @click="away">Cancel</button>
 
-        <head>
-	<title>Slide Navbar</title>
-	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
-</head>
-<body class="bdb">
-	<div class="main"> 
-        
-		<input class="gg" type="checkbox" id="chk" aria-hidden="true">
-        <button id='close' @click="away">Cancel</button>
+						<div class="signup">
+							<form >
+								<label class="sdf" for="chk" aria-hidden="true">Sign up</label>
+								<input class="gg" type="text" name="txt" placeholder="User name" required="">
+								<input class="gg" type="email" name="email" placeholder="Email" required="">
+								<input class="gg" type="password" name="pswd" placeholder="Password" required="">
+								<button class="sign">Sign up</button>
+							</form>
+						</div>
 
-			<div class="signup">
-				<form >
-					<label class="sdf" for="chk" aria-hidden="true">Sign up</label>
-					<input class="gg" type="text" name="txt" placeholder="User name" required="">
-					<input class="gg" type="email" name="email" placeholder="Email" required="">
-					<input class="gg" type="password" name="pswd" placeholder="Password" required="">
-					<button class="sign">Sign up</button>
-				</form>
-			</div>
-
-			<div class="login">
-				<form class="logan">
-					<label class="sdf" for="chk" aria-hidden="true">Login</label>
-					<input class="gg" type="email" name="email" placeholder="Email" required="">
-					<input class="gg" type="password" name="pswd" placeholder="Password" required="">
-					<button class="sign" @click="$router.push({ name: 'profile' })">Login</button>
-				</form>
-			</div>
-	</div>
-</body>
-
-
+						<div class="login">
+							<form class="logan">
+								<label class="sdf" for="chk" aria-hidden="true">Login</label>
+								<input class="gg" type="email" name="email" placeholder="Email" required="">
+								<input class="gg" type="password" name="pswd" placeholder="Password" required="">
+								<button class="sign" @click="$router.push({ name: 'profile' })">Login</button>
+							</form>
+						</div>
+				</div>
+			</body>
+		</div>
     </div>
 
 </template>
@@ -101,10 +95,20 @@
     border-top-right-radius: 40px;
     border-top-left-radius: 40px;
 }
+
+.sign-inContainer{
+	position: fixed;
+	background-color: #00000013;
+	backdrop-filter: blur(5px);
+	width: 100%;
+	height: 100%;
+	z-index: 1100;
+}
+
 .LoginReg{
-    position: absolute;
-    left: 50%;
+	position: absolute;
     top: 50%;
+	left: 50%;
     transform: translate(-50%, -50%);
     width: 600px;
     display: inline-flex;
@@ -124,7 +128,7 @@
 	overflow: hidden;
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #ffffff96;
-	
+	padding-top: 15px;
 }
 #chk{
 	display: none;

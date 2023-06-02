@@ -46,7 +46,7 @@
 <style>
 .fbody {
   display: flex;
-  background: #181729;
+  background: #18172900;
   justify-content: flex-end;
   align-items: flex-end;
   min-height: 400px;
@@ -55,7 +55,7 @@
 .footer {
   position: relative;
   width: 100%;
-  background: #3586FF;
+  background: #393939;
   min-height: 100px;
   padding: 20px 50px;
   display: flex;
@@ -118,7 +118,7 @@
   left: 0;
   width: 100%;
   height: 100px;
-  background: url("../assets/wave.png");
+  background: url("../assets/wave2.png");
   background-size: 1000px 100px;
 }
 

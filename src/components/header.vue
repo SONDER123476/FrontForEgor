@@ -1,10 +1,11 @@
 <template>
+    
     <header>
         <div class="headerLeftMenu">
           <img class="cobraIcon" src="../assets/cobra_icon.svg">
           <button type="button" class="headerManeMenu" @click="$router.push({ name: 'modelsList' })">3D Models</button>
-          <button class="headerManeMenu" >Sell 3D Models</button>
-          <button class="headerManeMenu" >FAQ</button>
+          <button class="headerManeMenu" @click="$router.push({ name: 'uploadPage' })">Sell 3D Models</button>
+          <button class="headerManeMenu" @click="$router.push({ name: 'modelPage' })">FAQ</button>
         </div>
         <div class="headerBaner">
           <a class="mainPageLink" href="/"><h1>3D HYDRA</h1></a>
@@ -12,47 +13,65 @@
         <div class="headerRightMenu">
           <input class="headerInpSearch" type="text" >
           <button class="headerBtnSearch"></button>
-          <button class="headerBtnLogin">Log In</button>
+          <button class="headerBtnLogin" @click="showLoginPole(), console.log(isLoginVisible)">Log In</button>
         </div>
     </header>
 </template>
 
 <script>
+// import LoginReg from './LoginReg.vue'
+import sign_inFildState from '../mixins/sign-inFildState.js'
+
     export default {
         name: 'headerPage',
+        // components: {LoginReg},
+        mixins: [sign_inFildState],
         data() {
-
+          return {
+            // isLoginVisible: false
+          }
+        },
+        methods: {
+          // awayclose(){
+          //   this.isLoginVisible = false;
+          // },
+          // showLoginPole(){
+          //   console.log(12121)
+          //   this.isLoginVisible = true;
+          // },
         }
+        
     }
 </script>
 
-<style>
+<style scoped>
     header {
-    /* position: fixed; */
     width: 100%;
     height: 75px;
-    background-color: #000000;
     border-bottom: 2px solid white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
   }
 
 .mainPageLink {
     text-decoration: none;
 }
 
-  .cobraIcon {  
+  .cobraIcon { 
+    width: 75px;
+    height: 100%;
     border-radius: 100%;
   }
   .headerLeftMenu{
+    height: 100%;
     display: flex;
     align-items: center;
+    gap: 30px;
+    margin-right: 10px;
   }
   .headerManeMenu{
-    font-family: 'M PLUS 1', sans-serif;
-    margin: 15px;
     text-decoration:none;
     font-family: 'M PLUS 1';
     font-style: normal;
