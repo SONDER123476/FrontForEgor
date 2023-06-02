@@ -1,6 +1,8 @@
 <template>
     <div>
-        <header-part />
+        <div class="headerContaineProfile">
+            <header-part />
+        </div>
             <div class="modelsList">
                 <div class="container">
                     <div class="categorysNameFild">
@@ -66,8 +68,9 @@
                         </div>
                     </div>
                 </div>
+                <footer-part />
             </div>
-        <footer-part />
+        
     </div>
 </template>
 
@@ -238,7 +241,8 @@ export default {
 
     .modelsList {
         height: 100%;
-        padding: 40px 0;
+        padding-top: 40px;
+
         background-color: #181729;
     }
     .categorysNameFild {
