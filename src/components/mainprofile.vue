@@ -63,229 +63,12 @@
           <div class="tbl-content">
             <table cellpadding="0" cellspacing="0" border="0">
               <tbody>
-                <tr>
-                  <td>AAC</td>
-                  <td>AUSTRALIAN COMPANY </td>
-                  <td>$1.38</td>
-                  <td>+2.01</td>
-                  <td>-0.36%</td>
-                </tr>
-                <tr>
-                  <td>AAD</td>
-                  <td>AUSENCO</td>
-                  <td>$2.38</td>
-                  <td>-0.01</td>
-                  <td>-1.36%</td>
-                </tr>
-                <tr>
-                  <td>AAX</td>
-                  <td>ADELAIDE</td>
-                  <td>$3.22</td>
-                  <td>+0.01</td>
-                  <td>+1.36%</td>
-                </tr>
-                <tr>
-                  <td>XXD</td>
-                  <td>ADITYA BIRLA</td>
-                  <td>$1.02</td>
-                  <td>-1.01</td>
-                  <td>+2.36%</td>
-                </tr>
-                <tr>
-                  <td>AAC</td>
-                  <td>AUSTRALIAN COMPANY </td>
-                  <td>$1.38</td>
-                  <td>+2.01</td>
-                  <td>-0.36%</td>
-                </tr>
-                <tr>
-                  <td>AAD</td>
-                  <td>AUSENCO</td>
-                  <td>$2.38</td>
-                  <td>-0.01</td>
-                  <td>-1.36%</td>
-                </tr>
-                <tr>
-                  <td>AAX</td>
-                  <td>ADELAIDE</td>
-                  <td>$3.22</td>
-                  <td>+0.01</td>
-                  <td>+1.36%</td>
-                </tr>
-                <tr>
-                  <td>XXD</td>
-                  <td>ADITYA BIRLA</td>
-                  <td>$1.02</td>
-                  <td>-1.01</td>
-                  <td>+2.36%</td>
-                </tr>
-                <tr>
-                  <td>AAC</td>
-                  <td>AUSTRALIAN COMPANY </td>
-                  <td>$1.38</td>
-                  <td>+2.01</td>
-                  <td>-0.36%</td>
-                </tr>
-                <tr>
-                  <td>AAD</td>
-                  <td>AUSENCO</td>
-                  <td>$2.38</td>
-                  <td>-0.01</td>
-                  <td>-1.36%</td>
-                </tr>
-                <tr>
-                  <td>AAX</td>
-                  <td>ADELAIDE</td>
-                  <td>$3.22</td>
-                  <td>+0.01</td>
-                  <td>+1.36%</td>
-                </tr>
-                <tr>
-                  <td>XXD</td>
-                  <td>ADITYA BIRLA</td>
-                  <td>$1.02</td>
-                  <td>-1.01</td>
-                  <td>+2.36%</td>
-                </tr>
-                <tr>
-                  <td>AAC</td>
-                  <td>AUSTRALIAN COMPANY </td>
-                  <td>$1.38</td>
-                  <td>+2.01</td>
-                  <td>-0.36%</td>
-                </tr>
-                <tr>
-                  <td>AAD</td>
-                  <td>AUSENCO</td>
-                  <td>$2.38</td>
-                  <td>-0.01</td>
-                  <td>-1.36%</td>
-                </tr>
-                <tr>
-                  <td>AAX</td>
-                  <td>ADELAIDE</td>
-                  <td>$3.22</td>
-                  <td>+0.01</td>
-                  <td>+1.36%</td>
-                </tr>
-                <tr>
-                  <td>XXD</td>
-                  <td>ADITYA BIRLA</td>
-                  <td>$1.02</td>
-                  <td>-1.01</td>
-                  <td>+2.36%</td>
-                </tr>
-                <tr>
-                  <td>AAC</td>
-                  <td>AUSTRALIAN COMPANY </td>
-                  <td>$1.38</td>
-                  <td>+2.01</td>
-                  <td>-0.36%</td>
-                </tr>
-                <tr>
-                  <td>AAD</td>
-                  <td>AUSENCO</td>
-                  <td>$2.38</td>
-                  <td>-0.01</td>
-                  <td>-1.36%</td>
-                </tr>
-                <tr>
-                  <td>AAX</td>
-                  <td>ADELAIDE</td>
-                  <td>$3.22</td>
-                  <td>+0.01</td>
-                  <td>+1.36%</td>
-                </tr>
-                <tr>
-                  <td>XXD</td>
-                  <td>ADITYA BIRLA</td>
-                  <td>$1.02</td>
-                  <td>-1.01</td>
-                  <td>+2.36%</td>
-                </tr>
-                <tr>
-                  <td>AAC</td>
-                  <td>AUSTRALIAN COMPANY </td>
-                  <td>$1.38</td>
-                  <td>+2.01</td>
-                  <td>-0.36%</td>
-                </tr>
-                <tr>
-                  <td>AAD</td>
-                  <td>AUSENCO</td>
-                  <td>$2.38</td>
-                  <td>-0.01</td>
-                  <td>-1.36%</td>
-                </tr>
-                <tr>
-                  <td>AAX</td>
-                  <td>ADELAIDE</td>
-                  <td>$3.22</td>
-                  <td>+0.01</td>
-                  <td>+1.36%</td>
-                </tr>
-                <tr>
-                  <td>XXD</td>
-                  <td>ADITYA BIRLA</td>
-                  <td>$1.02</td>
-                  <td>-1.01</td>
-                  <td>+2.36%</td>
-                </tr>
-                <tr>
-                  <td>AAC</td>
-                  <td>AUSTRALIAN COMPANY </td>
-                  <td>$1.38</td>
-                  <td>+2.01</td>
-                  <td>-0.36%</td>
-                </tr>
-                <tr>
-                  <td>AAD</td>
-                  <td>AUSENCO</td>
-                  <td>$2.38</td>
-                  <td>-0.01</td>
-                  <td>-1.36%</td>
-                </tr>
-                <tr>
-                  <td>AAX</td>
-                  <td>ADELAIDE</td>
-                  <td>$3.22</td>
-                  <td>+0.01</td>
-                  <td>+1.36%</td>
-                </tr>
-                <tr>
-                  <td>XXD</td>
-                  <td>ADITYA BIRLA</td>
-                  <td>$1.02</td>
-                  <td>-1.01</td>
-                  <td>+2.36%</td>
-                </tr>
-                <tr>
-                  <td>AAC</td>
-                  <td>AUSTRALIAN COMPANY </td>
-                  <td>$1.38</td>
-                  <td>+2.01</td>
-                  <td>-0.36%</td>
-                </tr>
-                <tr>
-                  <td>AAD</td>
-                  <td>AUSENCO</td>
-                  <td>$2.38</td>
-                  <td>-0.01</td>
-                  <td>-1.36%</td>
-                </tr>
-                <tr>
-                  <td>AAX</td>
-                  <td>ADELAIDE</td>
-                  <td>$3.22</td>
-                  <td>+0.01</td>
-                  <td>+1.36%</td>
-                </tr>
-                <tr>
-                  <td>XXD</td>
-                  <td>ADITYA BIRLA</td>
-                  <td>$1.02</td>
-                  <td>-1.01</td>
-                  <td>+2.36%</td>
+                <tr v-for="(item, index) in tableData" :key="index">
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.render }}</td>
+                  <td>{{ item.category }}</td>
+                  <td>{{ item.price }}</td>
+                  <td>{{ item.change }}</td>
                 </tr>
               </tbody>
             </table>
@@ -306,52 +89,35 @@
         </div>
         <div class="Models" v-if="isModelsVisable">
 
-          <!-- <div class="infoChel">
-            <div class="profile" for="item-1">
+          <div class="infoChel">
+            <div class="profile" :for="'item-' + currentIndex">
               <div class="image">
                 <div class="circle-1"></div>
                 <div class="circle-2"></div>
-                <img src="https://100dayscss.com/codepen/jessica-potter.jpg" width="70" height="70" alt="Jessica Potter">
+                <img :src="currentImage.src2" :width="currentImage.width" :height="currentImage.height" :alt="currentImage.alt">
               </div>
-			
-              <div class="name">Jessica Potter</div>
-              <div class="job">Visual Artist</div>
-        
-
+              <div class="name">{{ currentImage.name }}</div>
+              <div class="job">{{ currentImage.job }}</div>
             </div>
             <div class="stats">
-              <div class="box">
-                <span class="value">523</span>
-                <span class="parameter">Posts</span>
-              </div>
-              <div class="box">
-                <span class="value">1387</span>
-                <span class="parameter">Likes</span>
-              </div>
-              <div class="box">
-                <span class="value">146</span>
-                <span class="parameter">Follower</span>
+              <div class="box" v-for="(stat, index) in currentImage.stats" :key="index">
+                <span class="value">{{ stat.value }}</span>
+                <span class="parameter">{{ stat.parameter }}</span>
               </div>
             </div>
-          </div> -->
+          </div>
 
           <div class="containerProfile" v-if="isModelsVisable">
-            <input type="radio" name="slider" id="item-1" checked>
-            <input type="radio" name="slider" id="item-2">
-            <input type="radio" name="slider" id="item-3">
-          <div class="cards">
-            <label class="card" for="item-1" id="song-1">
-              <img src="https://images.unsplash.com/photo-1530651788726-1dbf58eeef1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=882&q=80" alt="song">
-            </label>
-            <label class="card" for="item-2" id="song-2">
-              <img src="https://images.unsplash.com/photo-1559386484-97dfc0e15539?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80" alt="song">
-            </label>
-            <label class="card" for="item-3" id="song-3">
-              <img src="https://images.unsplash.com/photo-1533461502717-83546f485d24?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="song">
-            </label>
-          </div>
-        </div>
-          
+            <div class="cards">
+              <label class="card" :class="'song-' + index" v-for="(image, index) in imageData" :key="index" v-show="index === currentIndex">
+                <img :src="image.src" :alt="image.alt">
+              </label>
+            </div>
+            <div class="buttonContainer">
+              <button class="big-button" @click="previousModel">Previous</button>
+              <button class="big-button" @click="nextModel">Next</button>
+            </div>
+          </div>  
           
         
          </div>
@@ -383,17 +149,95 @@ export default {
       isModelsVisable: false,
       isStatisticVisable: false,
       isContractVisable: false,
+      currentIndex: 0,
+      tableData: [
+        { name: "AAC", 
+          render: "AUSTRALIAN COMPANY", 
+          category: "$1.38", 
+          price: "+2.01", 
+          change: "-0.36%" },
+          { name: "AAC", 
+          render: "AUSTRALIAN COMPANY", 
+          category: "$1.38", 
+          price: "+2.01", 
+          change: "-0.36%" },
+          { name: "AAC", 
+          render: "AUSTRALIAN COMPANY", 
+          category: "$1.38", 
+          price: "+2.01", 
+          change: "-0.36%" },
+          { name: "AAC", 
+          render: "AUSTRALIAN COMPANY", 
+          category: "$1.38", 
+          price: "+2.01", 
+          change: "-0.36%" },
+          { name: "AAC", 
+          render: "AUSTRALIAN COMPANY", 
+          category: "$1.38", 
+          price: "+2.01", 
+          change: "-0.36%" },
+    ],
+    imageData: [
+        { src: "https://images.unsplash.com/photo-1530651788726-1dbf58eeef1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=882&q=80",
+          src2: "https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?w=1060&t=st=1685789836~exp=1685790436~hmac=4d2628be930322acd8acc36f3d7fe3177eb052acb69fb6d30763dd971061492a",
+          width: 70,
+          height: 70,
+          alt: 'Jessica Potter',
+          name: 'Jessica Potter',
+          job: 'Visual Artist',
+          stats: [
+            { value: 523, parameter: 'Posts' },
+            { value: 1387, parameter: 'Likes' },
+            { value: 146, parameter: 'Followers' }
+          ] },
+        { src: "https://images.unsplash.com/photo-1559386484-97dfc0e15539?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80", 
+          src2: "https://img.freepik.com/free-photo/handsome-young-man-in-white-t-shirt-cross-arms-chest-and-smiling-pleased_176420-21607.jpg?w=1060&t=st=1685789496~exp=1685790096~hmac=96686a23f29f437993b1b485350853580cdde86a20020f879cb2c8465a00ec8d",
+          width: 70,
+          height: 70,
+          alt: 'Daun Mit',
+          name: 'Daun Mit',
+          job: 'Dolbaeb',
+          stats: [
+            { value: 400, parameter: 'Posts' },
+            { value: 200, parameter: 'Likes' },
+            { value: 1300, parameter: 'Followers' }
+          ] },
+        { src: "https://images.unsplash.com/photo-1533461502717-83546f485d24?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60", alt: "song 3" },
+        { src: "https://stihi.ru/pics/2022/10/30/6173.jpg", alt: "song 3" },
+        { src: "https://mobimg.b-cdn.net/v3/fetch/c3/c348e4a1eb6625e4cec5d044be082b99.jpeg", alt: "song 3" },
+        { src: "https://avatars.mds.yandex.net/get-mpic/7179065/img_id7790664592758262363.jpeg/orig", alt: "song 3" },
+        { src: "https://vsegda-pomnim.com/uploads/posts/2022-04/1649143490_6-vsegda-pomnim-com-p-priroda-islandii-foto-8.jpg", alt: "song 3" },
+        // Добавьте другие объекты с данными в массив, если нужно
+      ]
     }
     
   },
+  computed: {
+    selectedItem() {
+      // Обеспечиваем циклическое перелистывание моделей
+      return this.currentIndex % this.imageData.length;
+    },
+    currentImage() {
+      return this.imageData[this.currentIndex];
+    },
+  },
   methods: {
+
+    previousModel() {
+      // Переключение на предыдущую модель
+      this.currentIndex = (this.currentIndex - 1 + this.imageData.length) % this.imageData.length;
+    },
+    nextModel() {
+      // Переключение на следующую модель
+      this.currentIndex = (this.currentIndex + 1) % this.imageData.length;
+    },
     openFileDialog() {
-this.$refs.fileInput.click();
-},
-handleFileChange(event) {
-const file = event.target.files[0];
-this.backgroundUrl = `url(${URL.createObjectURL(file)})`;
-},
+      this.$refs.fileInput.click();
+    },
+    handleFileChange(event) {
+      const file = event.target.files[0];
+      this.backgroundUrl = `url(${URL.createObjectURL(file)})`;
+    },
     showPopupInfo(){
       this.isInfoPopupVisible = true;
     },
@@ -429,7 +273,78 @@ this.backgroundUrl = `url(${URL.createObjectURL(file)})`;
 
 
 <style lang="scss">
+:root {
+  --colorShadeA: rgb(0, 0, 0);
+  --colorShadeB: rgb(0, 0, 0);
+  --colorShadeC: rgb(65, 65, 65);
+  --colorShadeD: rgba(0, 238, 255, 0.753);
+  --colorShadeE: rgb(255, 255, 255);
+}
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+button.big-button {
+  padding: 1em 2em;
+  border: 2px solid var(--colorShadeA);
+  border-radius: 1em;
+  cursor: pointer;
+  background: var(--colorShadeE);
+  transform-style: preserve-3d;
+  transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: var(--colorShadeA);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: inherit;
+}
+button.big-button::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--colorShadeC);
+  border-radius: inherit;
+  box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
 
+button.big-button:hover {
+  background: var(--colorShadeD);
+  transform: translate(0, 0.375em);
+}
+
+button.big-button:hover::before {
+  transform: translate3d(0, 0.75em, -1em);
+}
+
+button.big-button:active {
+  transform: translate(0em, 0.75em);
+}
+
+button.big-button:active::before {
+  transform: translate3d(0, 0, -1em);
+
+  box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+}
+
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.previousButton {
+  margin-right: 10px;
+}
+
+.nextButton {
+  margin-left: 10px;
+}
   .table1{
     margin-top: 30px;
   }
@@ -744,113 +659,12 @@ img {
   object-fit: cover;
 }
 
-#item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #song-2 {
-  transform: translatex(-40%) scale(.8);
-  opacity: .4;
-  z-index: 0;
-}
-
-#item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
-  transform: translatex(40%) scale(.8);
-  opacity: .4;
-  z-index: 0;
-}
-
-#item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 {
-  transform: translatex(0) scale(1);
-  opacity: 1;
-  z-index: 1;
-  
   img {
     box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
   }
-}
 
-.player {
-  background-color: #fff;
-  border-radius: 8px;
-  min-width: 320px;
-  padding: 16px 10px;
-}
 
-.upper-part {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-  height: 36px;
-  overflow: hidden;
-}
 
-.play-icon{ margin-right: 10px; }
-
-.song-info {
-  width: calc(100% - 32px);
-  display: block;
-}
-
-.song-info .title {
-  color: #403d40;
-  font-size: 14px;
-  line-height: 24px;
-}
-
-.sub-line {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.subtitle, .time {
-  font-size: 12px;
-  line-height: 16px;
-  color: #c6c5c6;
-}
-
-.time {
-  font-size: 12px;
-  line-height: 16px;
-  color: #a5a5a5;
-  font-weight: 500;
-  margin-left: auto;
-}
-
-.progress-bar {
-  height: 3px;
-  width: 100%;
-  background-color: #e9efff;
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.progress {
-  display: block;
-  position: relative;
-  width: 60%;
-  height: 100%;
-  background-color: #2992dc;
-  border-radius: 6px;
-}
-
-.info-area {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 30px;
-  transition: transform .4s ease-in;
-}
-
-#item-2:checked ~ .player #test {
-  transform: translateY(0);
-}
-
-#item-2:checked ~ .player #test  {
-  transform: translateY(-40px);
-}
-
-#item-3:checked ~ .player #test  {
-  transform: translateY(-80px);
-}
 .infoChel{
 
   margin-top: 50px;
