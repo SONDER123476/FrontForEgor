@@ -1,5 +1,8 @@
 <template>
-    
+    <LoginReg
+          v-if="isLoginVisible"
+          @away="awayclose"
+          />
     <header>
         <div class="headerLeftMenu">
           <img class="cobraIcon" src="../assets/cobra_icon.svg">
@@ -19,12 +22,12 @@
 </template>
 
 <script>
-// import LoginReg from './LoginReg.vue'
+import LoginReg from './LoginReg.vue'
 import sign_inFildState from '../mixins/sign-inFildState.js'
 
     export default {
         name: 'headerPage',
-        // components: {LoginReg},
+        components: {LoginReg},
         mixins: [sign_inFildState],
         data() {
           return {

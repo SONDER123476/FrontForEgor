@@ -1,9 +1,9 @@
 <template>
   <div>
-    <LoginReg
+    <!-- <LoginReg
           v-if="isLoginVisible"
           @away="awayclose"
-          />
+          /> -->
     <div class="headerContainer">
       <header-part />
     </div>
@@ -11,7 +11,7 @@
         <div class="welcToHydra">
           <h2>Wellcome to <br>3d Hydra</h2>
         </div>
-        <button class="categoryMP" @click="showLoginPole()">Category</button>
+        <button class="categoryMP" >Category</button>
     </div>
     <div class="info">
       <div class="container">  
@@ -134,14 +134,14 @@
 //import { computed } from 'vue';
 import CategoryCard from './categoryCard.vue';
 import footerPart from './footer.vue';
-import LoginReg from './LoginReg.vue';
+// import LoginReg from './LoginReg.vue';
 import headerPart from './header.vue';
 //import categorysList from './categorys.vue';
 import sign_inFildState from '../mixins/sign-inFildState.js'
 
 export default {
   name: 'mainPage',
-  components: {CategoryCard, footerPart, headerPart, LoginReg},
+  components: {CategoryCard, footerPart, headerPart},
   mixins: [sign_inFildState],
   data () {
     return {
@@ -242,7 +242,6 @@ export default {
   .headerContainer {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.69);
-    backdrop-filter: blur(4px);
     width: 100%;
     z-index: 999;
   }
