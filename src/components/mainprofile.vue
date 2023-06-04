@@ -15,6 +15,14 @@
         v-show="isInfoPopupVisible"
         @closePopup="closePopupInfo"
       />
+      <CheckOut
+        v-show="isInfoCheckOut"
+        @closePopup="closePopupInfo"
+        />
+        <PayWallet
+        v-show="isPayWallet"
+        @closePopup="closePayWallet"
+        />
       
       <div class="block TopBlock">
 
@@ -25,9 +33,11 @@
           <a class="TopBlocktext">N models sold</a>
           <a class="TopBlocktext">N reputation</a> 
         </div>
-        
+        <div class="Wallet">
+          <button class="ButtonBitch" @click="showPayWallet">Payment</button>
+        </div>
         <div class="ButtonBlock"> 
-          <button class="ButtonBitch" @click="showLoginPole">Withdrawal<br></button>
+          <button class="ButtonBitch" @click="showCheckOutInfo">Withdrawal<br></button>
           <button class="ButtonBitch" @click="showPopupInfo">Log out</button>
 
 
@@ -65,7 +75,7 @@
               <tbody>
                 <tr v-for="(item, index) in tableData" :key="index">
                   <td>{{ item.name }}</td>
-                  <td>{{ item.render }}</td>
+                  <td style="height: 10px width: 10px;">{{ item.render }}</td>
                   <td>{{ item.category }}</td>
                   <td>{{ item.price }}</td>
                   <td>{{ item.change }}</td>
@@ -119,6 +129,18 @@
             </div>
           </div>  
           
+          <div class="infoModel">
+
+            <div class="blockOpisan " :for="'item-' + currentIndex">
+              <div class="heading">
+                <a class="aHeading">Описание</a>
+              </div>
+              <div class="Opisania">
+                <a class="textOpis"> {{ currentImage.description }}</a>
+              </div>
+            </div>
+
+          </div>
         
          </div>
         
@@ -133,6 +155,8 @@
 import vPopup from './v-popup.vue'
 import headerPart from './header.vue'
 import footerPart from './footer.vue'
+import CheckOut from './CheckOut.vue'
+import PayWallet from './PayWallet.vue'
 
 export default {
   name: 'ProfilePage',
@@ -140,10 +164,14 @@ export default {
     vPopup,
     headerPart,
     footerPart,
+    CheckOut,
+    PayWallet,
 },
   data(){
     return{
       backgroundUrl: '',
+      isPayWallet: false,
+      isInfoCheckOut: false,
       isInfoPopupVisible: false,
       isProfileVisable: false,
       isModelsVisable: false,
@@ -152,7 +180,7 @@ export default {
       currentIndex: 0,
       tableData: [
         { name: "AAC", 
-          render: "AUSTRALIAN COMPANY", 
+          render: "http://bfoto.ru/foto/river/bfoto_ru_4763.jpg", 
           category: "$1.38", 
           price: "+2.01", 
           change: "-0.36%" },
@@ -185,6 +213,7 @@ export default {
           alt: 'Jessica Potter',
           name: 'Jessica Potter',
           job: 'Visual Artist',
+          description: 'Повседневная практика показывает, что рамки и место обучения кадров напрямую зависит от дальнейших направлений развитая системы массового участия. Равным образом повышение уровня гражданского сознания позволяет оценить значение всесторонне сбалансированных нововведений. Повседневная практика показывает, что новая модель организационной деятельности играет важную роль в формировании системы обучения кадров, соответствующей насущным потребностям.',
           stats: [
             { value: 523, parameter: 'Posts' },
             { value: 1387, parameter: 'Likes' },
@@ -197,6 +226,7 @@ export default {
           alt: 'Daun Mit',
           name: 'Daun Mit',
           job: 'Dolbaeb',
+          description: 'Практический опыт показывает, что начало повседневной работы по формированию позиции в значительной степени обуславливает создание модели развития? Соображения высшего порядка, а также дальнейшее развитие различных форм деятельности создаёт предпосылки качественно новых шагов для форм воздействия? Таким образом, постоянный количественный рост и сфера нашей активности требует от нас анализа системы обучения кадров, соответствующей насущным потребностям. Разнообразный и богатый опыт повышение уровня гражданского сознания позволяет выполнить важнейшие задания по разработке экономической целесообразности принимаемых решений.',
           stats: [
             { value: 400, parameter: 'Posts' },
             { value: 200, parameter: 'Likes' },
@@ -222,7 +252,12 @@ export default {
     },
   },
   methods: {
-
+    showPayWallet(){
+      this.isPayWallet = true;
+    },
+    closePayWallet(){
+      this.isPayWallet = false;
+    },
     previousModel() {
       // Переключение на предыдущую модель
       this.currentIndex = (this.currentIndex - 1 + this.imageData.length) % this.imageData.length;
@@ -243,6 +278,12 @@ export default {
     },
     closePopupInfo(){
       this.isInfoPopupVisible = false;
+    },
+    showCheckOutInfo(){
+      this.isInfoCheckOut = true;
+    },
+    closeCheckOutInfo(){
+      this.isInfoCheckOut = false;
     },
     
     showStatistick() {
@@ -273,6 +314,25 @@ export default {
 
 
 <style lang="scss">
+.heading{
+  width: 300px;
+  height: 30px;
+  justify-content: center;
+  
+}
+.infoModel{
+  margin-top: 40px;
+}
+.blockOpisan{
+  margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  width: 300px;
+  height: 300px;
+  border: 2px solid white;
+  background-color: rgba(133, 133, 133, 0.507);
+}
 :root {
   --colorShadeA: rgb(0, 0, 0);
   --colorShadeB: rgb(0, 0, 0);

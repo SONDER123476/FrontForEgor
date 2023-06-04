@@ -11,7 +11,7 @@
         <div class="welcToHydra">
           <h2>Wellcome to <br>3d Hydra</h2>
         </div>
-        <button class="categoryMP" >Category</button>
+        <button class="categoryMP" @click="$router.push({ name: 'profile' })">Category</button>
     </div>
     <div class="info">
       <div class="container">  
