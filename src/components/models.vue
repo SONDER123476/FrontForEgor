@@ -469,4 +469,6 @@ export default {
         font-weight: bold;
         background-color: white;
     }
+
+    
 </style>

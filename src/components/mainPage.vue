@@ -1,15 +1,11 @@
 <template>
   <div>
-    <!-- <LoginReg
-          v-if="isLoginVisible"
-          @away="awayclose"
-          /> -->
     <div class="headerContainer">
       <header-part />
     </div>
     <div class="manePart">
         <div class="welcToHydra">
-          <h2>Wellcome to <br>3d Hydra</h2>
+          <h2>Wellcome to <br>3D Hydra</h2>
         </div>
         <button class="categoryMP" @click="$router.push({ name: 'profile' })">Category</button>
     </div>
@@ -138,11 +134,14 @@ import footerPart from './footer.vue';
 import headerPart from './header.vue';
 //import categorysList from './categorys.vue';
 import sign_inFildState from '../mixins/sign-inFildState.js'
+import { mapActions } from 'vuex';
 
 export default {
   name: 'mainPage',
   components: {CategoryCard, footerPart, headerPart},
   mixins: [sign_inFildState],
+  
+  
   data () {
     return {
       sections: [
@@ -214,7 +213,11 @@ export default {
                   ],
     };
   },
+  created() {
+    this.getCategorys()
+  },
   methods: {
+    ...mapActions('storeCategorys', ['getCategorys']),
     toggleSection(index) {
       this.sections[index].open = !this.sections[index].open;
     },

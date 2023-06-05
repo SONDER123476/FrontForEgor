@@ -10,10 +10,10 @@
 						<div class="signup">
 							<form >
 								<label class="sdf" for="chk" aria-hidden="true">Sign up</label>
-								<input class="gg" type="text" placeholder="User name" required="" >
-								<input class="gg" type="email" placeholder="Email" required="">
-								<input class="gg" type="password" placeholder="Password" required="" >
-								<button class="sign" @click="signUp()">Sign up</button>
+								<input class="gg" type="text" placeholder="User name" required="" v-model="form.name">
+								<input class="gg" type="email" placeholder="Email" required="" v-model="form.email">
+								<input class="gg" type="password" placeholder="Password" required="" v-model="form.password">
+								<button class="sign" @click.prevent="signUpBtn()">Sign up</button>
 							</form>
 						</div>
 
@@ -34,6 +34,8 @@
 
 
 <script>
+import { mapActions } from 'vuex';
+
   export default{
     name: "LoginReg",
     props: {},
@@ -41,14 +43,15 @@
         return {
 			mode: 'singUp',
 			form: {
-				name: 'huesosik322',
-				email: 'maximka@lox.hui',
-				password: '12345678',
+				name: '',
+				email: '',
+				password: '',	
 			},
 			erorr: [],
 		}
     },
     methods: {
+		...mapActions( 'userStore', ['signUp']),
         away(){
             this.$emit('away');
 
@@ -56,33 +59,9 @@
 		huets(){
 			console.log(this.form.name)
 		},
-		async signUp() {
-			console.log(JSON.stringify({
-					name: this.form.name,
-					email: this.form.email,
-					password: this.form.password,
-				}))
-			try{
-				const res = await fetch('http://localhost:5000/api/user/registration', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				// credentials: 'include',
-				body: JSON.stringify({
-					name: this.form.name,
-					email: this.form.email,
-					password: this.form.password,
-				})
-				
-			})
-			console.log("хуйня не тут")
-			console.log(res)
-			}	
-			catch{
-				console.log("какая-то хуйня")
-			}
-			
+		signUpBtn() {
+			this.signUp(this.form)
+			console.log('this.form')
 		},
     }
 }

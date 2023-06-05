@@ -1,15 +1,10 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { createStore } from 'vuex'
+import storeCategorys from './storeCategorys.js'
+import userStore from './userStore.js'
 
-Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
-    count: 0
-  },
-  mutations: {
-    increment (state) {
-      state.count++
-    }
-  }
+export default createStore({
+  modules: { storeCategorys, userStore },
 }) 
+
+

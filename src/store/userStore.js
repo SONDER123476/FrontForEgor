@@ -1,27 +1,29 @@
 import signinApi from '../api/index'
+import jwt_decode from "jwt-decode"
 
 export default {
     namespaced: true,
     state() { 
         return {
-            count: 69,
+            user: null,
         }
     },
-    mutations: {},
+    mutations: {
+        SET_USER(state, payload) {
+            state.user = jwt_decode(payload.data.token)
+        }
+    },
     actions: {
-        async signUp(form) {
+        async signUp(context, form) {
+            console.log(form)
 			try {
-				const data = (await signinApi.auth.signUp( {
-									name: form.name,
-									email: form.email,
-									password: form.password,
-								}))
-				localStorage.setItem('user', JSON.stringify(data))
+				const payload = (await signinApi.auth.signUp(form))
+				localStorage.setItem('user', JSON.stringify(payload.data.token))
+                context.commit('SET_USER', payload)
 			} catch(error) {
-				console.log(error.response.data)
+				console.log(error.response.payload)
+               
 			}
-			console.log("хуйня не тут")
-			
 		}
   }
 }
