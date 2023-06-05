@@ -10,10 +10,7 @@
                     <div class="modelInfoCard">
                         <h5 class="modelTitleCard">{{ title }}</h5>
                         <div class="modelRatingCard">
-                            <img class="likeModelRatingCard" src="../assets/likeModelCard.svg">
-                            <span>4</span>
-                            <img class="dislikeModelRatingCard" src="../assets/disLikeModelCard.svg">
-                            <span>5</span>
+                            <span>{{ price + 'P'}}</span>
                         </div>
                     </div>
                 </div>
@@ -37,6 +34,10 @@ export default {
         },
         imgUrl: {
             type: String,
+        },
+        price: {
+            type: Number,
+            defualt: 0,
         }
     },
     data() {

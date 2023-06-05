@@ -7,7 +7,7 @@
         <div class="welcToHydra">
           <h2>Wellcome to <br>3D Hydra</h2>
         </div>
-        <button class="categoryMP" @click="$router.push({ name: 'profile' })">Category</button>
+        <button class="categoryMP" @click="setType ()">Category</button>
     </div>
     <div class="info">
       <div class="container">  
@@ -106,13 +106,16 @@
         <div class="container">
           <ul class="list-default">
                   <li 
-                      v-for="(category, index) in categorys"
-                      :key="index"
+                      v-for="(category, index) in getAllCategorys()"
+                      :key="index" 
                   >
+                    <div @click="$router.push({ name: 'modelsList', params: { categoryID : category.id }})">
                       <category-card 
-                          :title="category.title"
+                          :title="category.name"
                           :img-url="category.imgUrl"
+                          
                       />
+                    </div>
                   </li>
               </ul>
         </div>
@@ -134,7 +137,7 @@ import footerPart from './footer.vue';
 import headerPart from './header.vue';
 //import categorysList from './categorys.vue';
 import sign_inFildState from '../mixins/sign-inFildState.js'
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'mainPage',
@@ -148,69 +151,7 @@ export default {
         { title: 'Заголовок раздела 1', content: 'Содержимое раздела 1', open: false },
         { title: 'Заголовок раздела 2', content: 'Содержимое раздела 2', open: false },
         { title: 'Заголовок раздела 3', content: 'Содержимое раздела 3', open: false }
-      ],
-      categorys: [
-                    {
-                        title: 'Aircraft 3D Models',
-                        imgUrl: require('../assets/categoryPlane.png'),
-                    },
-                    {
-                        title: 'Animal 3D Models',
-                        imgUrl: require('../assets/categoryAnimal.png'),
-                    },
-                    {
-                        title: 'Architectural 3D Models',
-                        imgUrl: require('../assets/categoryArchitectural.png'),
-                    },
-                    {
-                        title: 'Car 3D Models',
-                        imgUrl: require('../assets/categoryCar.png'),
-                    },
-                    {
-                        title: 'Character 3D Models',
-                        imgUrl: require('../assets/categoryCharacter.png'),
-                    },
-                    {
-                        title: 'Exterior 3D Models',
-                        imgUrl: require('../assets/categoryExterior.png'),
-                    },
-                    {
-                        title: 'Food 3D Models',
-                        imgUrl: require('../assets/categoryFood.png'),
-                    },
-                    {
-                        title: 'Furniture 3D Models',
-                        imgUrl: require('../assets/categoryFurniture.png'),
-                    },
-                    {
-                        title: 'Household 3D Models',
-                        imgUrl: require('../assets/categoryHousehold.png'),
-                    },
-                    {
-                        title: 'Industrial 3D Models',
-                        imgUrl: require('../assets/categoryIndastrial.png'),
-                    },
-                    {
-                        title: 'Military 3D Models',
-                        imgUrl: require('../assets/categoryMilitary.png'),
-                    },
-                    {
-                        title: 'Plant 3D Models',
-                        imgUrl: require('../assets/categoryPlant.png'),
-                    },
-                    {
-                        title: 'Space 3D Models',
-                        imgUrl: require('../assets/categorySpace.png'),
-                    },
-                    {
-                        title: 'Vehicle 3D Models',
-                        imgUrl: require('../assets/categoryVehicle.png'),
-                    },
-                    {
-                        title: 'Watercraft 3D Models',
-                        imgUrl: require('../assets/categoryWatercraft.png'),
-                    }
-                  ],
+                ],
     };
   },
   created() {
@@ -218,12 +159,12 @@ export default {
   },
   methods: {
     ...mapActions('storeCategorys', ['getCategorys']),
+    ...mapGetters('storeCategorys', ['getAllCategorys']),
     toggleSection(index) {
       this.sections[index].open = !this.sections[index].open;
     },
   },
   computed: {
-    
   }
 }
 </script>

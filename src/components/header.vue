@@ -6,16 +6,16 @@
     <header>
         <div class="headerLeftMenu">
           <img class="cobraIcon" src="../assets/cobra_icon.svg">
-          <button type="button" class="headerManeMenu" @click="$router.push({ name: 'modelsList' })">3D Models</button>
+          <button type="button" class="headerManeMenu" @click="$router.push({ name: 'modelsList', params: { categoryID : 0} })">3D Models</button>
           <button class="headerManeMenu" @click="$router.push({ name: 'uploadPage' })">Sell 3D Models</button>
-          <button class="headerManeMenu" @click="$router.push({ name: 'modelPage' })">FAQ</button>
+          <button class="headerManeMenu">FAQ</button>
         </div>
         <div class="headerBaner">
           <a class="mainPageLink" href="/"><h1>3D HYDRA</h1></a>
         </div>
         <div class="headerRightMenu">
           <input class="headerInpSearch" type="text" >
-          <button class="headerBtnSearch"></button>
+          <button class="headerBtnSearch" ></button>
           <button class="headerBtnLogin" @click="showLoginPole(), console.log(isLoginVisible)">Log In</button>
           <button class="headerProfileBtn" @click="$router.push({ name: 'profile' })">Профиль</button>
         </div>
@@ -25,7 +25,8 @@
 <script>
 import LoginReg from './LoginReg.vue'
 import sign_inFildState from '../mixins/sign-inFildState.js'
-import { mapState } from 'vuex'
+// import { mapActions } from 'vuex'
+// import { mapState } from 'vuex'
 
     export default {
         name: 'headerPage',
@@ -37,10 +38,20 @@ import { mapState } from 'vuex'
             userIsLogin: false
           }
         },
-        created() {
-          ...mapState('userStorfe, [])
-        }
+        // created() {
+          // ...mapState('userStorfe', {
+        //     user: state => state.userStore.user
+        //     })
+        // },
+      
         methods: {
+          // ...mapState('userStorfe', {
+          //   user: state => state.userStore.user
+          //   })
+          // ...mapActions('userStore', ['auth']),
+          // authBtn(){
+          //   this.auth()
+          // }
           // awayclose(){
           //   this.isLoginVisible = false;
           // },

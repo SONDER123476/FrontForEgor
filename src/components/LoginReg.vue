@@ -10,9 +10,9 @@
 						<div class="signup">
 							<form >
 								<label class="sdf" for="chk" aria-hidden="true">Sign up</label>
-								<input class="gg" type="text" placeholder="User name" required="" v-model="form.name">
-								<input class="gg" type="email" placeholder="Email" required="" v-model="form.email">
-								<input class="gg" type="password" placeholder="Password" required="" v-model="form.password">
+								<input class="gg" type="text" placeholder="User name" required="" v-model="formSignUp.name">
+								<input class="gg" type="email" placeholder="Email" required="" v-model="formSignUp.email">
+								<input class="gg" type="password" placeholder="Password" required="" v-model="formSignUp.password">
 								<button class="sign" @click.prevent="signUpBtn()">Sign up</button>
 							</form>
 						</div>
@@ -20,8 +20,8 @@
 						<div class="login">
 							<form class="logan">
 								<label class="sdf" for="chk" aria-hidden="true">Login</label>
-								<input class="gg" type="email" name="email" placeholder="Email" required="" @input="email">
-								<input class="gg" type="password" name="pswd" placeholder="Password" required="" @input="password">
+								<input class="gg" type="email" name="email" placeholder="Email" required="" v-model="formLogIn.email">
+								<input class="gg" type="password" name="pswd" placeholder="Password" required="" v-model="formLogIn.password">
 								<button class="sign" @click.prevent="huets()">Login</button>
 							</form>
 						</div>
@@ -41,17 +41,19 @@ import { mapActions } from 'vuex';
     props: {},
     data(){
         return {
-			mode: 'singUp',
-			form: {
+			formSignUp: {
 				name: '',
 				email: '',
 				password: '',	
 			},
-			erorr: [],
+			formLogIn: {
+				email: '',
+				password: '',	
+			},
 		}
     },
     methods: {
-		...mapActions( 'userStore', ['signUp']),
+		...mapActions( 'userStore', ['signUp', 'logIn']),
         away(){
             this.$emit('away');
 
@@ -60,9 +62,11 @@ import { mapActions } from 'vuex';
 			console.log(this.form.name)
 		},
 		signUpBtn() {
-			this.signUp(this.form)
-			console.log('this.form')
+			this.signUp(this.formSignUp)
 		},
+		logInBtn(){
+			this.logIn(this.formLogIn)
+		}
     }
 }
 

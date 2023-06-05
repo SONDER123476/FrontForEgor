@@ -16,7 +16,7 @@ export default createRouter ({
             component: mainPage, 
             alias: '/'},
         {
-            path: '/models', 
+            path: '/models/:categoryID', 
             name: 'modelsList',
             component: modelsList,
         },
@@ -26,7 +26,7 @@ export default createRouter ({
             component: mainprofile,
         },
         {
-            path: '/model',
+            path: '/model/:modelID',
             name: 'modelPage',
             component: modelPage,
         },

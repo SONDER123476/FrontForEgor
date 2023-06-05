@@ -6,7 +6,7 @@
             <div class="modelsList">
                 <div class="container">
                     <div class="categorysNameFild">
-                        <h2 class="nameCategoryFilter">Name category</h2>
+                        <h2 class="nameCategoryFilter">{{ category ? category.name : 'All Categorys'}}</h2>
                         <div class="typeSortModelsDropdown">
                             <select  v-model="selectedOption" @change="handleSelection">
                                 <option v-for="option in options" :value="option.value" :key="option.value">{{ option.label }}</option>
@@ -52,14 +52,17 @@
                         </div>
                         <div class="modelsFild">
                             <ul class="models">
-                                <li v-for="(model, index) in models"
+                                <li v-for="(model, index) in getAllModels()"
                                     :key="index"
                                 class="modelsCards">
-                                    <model-card 
-                                        :img-url="model.imgUrl"
-                                        :title="model.title"   
-                                        :model-id="model.modelId"
-                                    />
+                                    <div @click="$router.push({ name: 'modelPage', params : { modelID : index}})">
+                                        <model-card 
+                                            :img-url="model.imgUrl"
+                                            :title="model.name"   
+                                            :model-id="model.modelId"
+                                            :price="model.price"
+                                        />
+                                    </div>
                                 </li>
                             </ul>
                             <div class="pagenatorContainer">
@@ -78,6 +81,9 @@
 import headerPart from './header.vue';
 import footerPart from './footer.vue';
 import modelCard from './modelCard.vue';
+import { mapGetters } from 'vuex';
+import { mapActions } from 'vuex';
+
 
 export default {
     name: 'TheModels',
@@ -85,6 +91,7 @@ export default {
     data() {
         return {
             selectedOption: null,
+            category: null,
             options: [
                 { label: 'Most popular', value: 'option1' },
                 { label: 'Least popular', value: 'option2' },
@@ -208,8 +215,17 @@ export default {
             
         };
     },
-
+    created(){
+        this.category = this.getCategoryById()(parseInt(this.$route.params.categoryID))
+        this.getModels()
+        console.log(this.category)
+    },
     methods: {
+        ...mapGetters({
+            getCategoryById : 'storeCategorys/getCategoryById', 
+            getAllModels : 'storeModels/getAllModels'
+        }),
+        ...mapActions('storeModels', ['getModels']),
         handleSelection() {
         // Обработка выбора опции
         console.log(this.selectedOption);
@@ -217,7 +233,7 @@ export default {
         
     },
     computed: {
-        
+      
     },
 }
 </script>
@@ -417,8 +433,6 @@ export default {
             border: 1px solid transparent;
         }
 
-        input[type="checkbox"] {
-        }
 
         span::after {
             content: "";

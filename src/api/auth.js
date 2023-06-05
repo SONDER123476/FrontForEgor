@@ -5,6 +5,9 @@ export default function(signinApi) {
         },
         login(payload){
             return signinApi.post('user/login', payload)
+        },
+        auth(){
+            return signinApi.get('user/auth' )
         }
     }
 }
