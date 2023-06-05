@@ -17,6 +17,7 @@
           <input class="headerInpSearch" type="text" >
           <button class="headerBtnSearch"></button>
           <button class="headerBtnLogin" @click="showLoginPole(), console.log(isLoginVisible)">Log In</button>
+          <button class="headerProfileBtn" @click="$router.push({ name: 'profile' })">Профиль</button>
         </div>
     </header>
 </template>
@@ -24,6 +25,7 @@
 <script>
 import LoginReg from './LoginReg.vue'
 import sign_inFildState from '../mixins/sign-inFildState.js'
+import { mapState } from 'vuex'
 
     export default {
         name: 'headerPage',
@@ -32,8 +34,12 @@ import sign_inFildState from '../mixins/sign-inFildState.js'
         data() {
           return {
             // isLoginVisible: false
+            userIsLogin: false
           }
         },
+        created() {
+          ...mapState('userStorfe, [])
+        }
         methods: {
           // awayclose(){
           //   this.isLoginVisible = false;
