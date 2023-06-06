@@ -32,6 +32,17 @@ export default {
                 console.log(error.response.data)
             }
             
+        },
+        async loadModelById(context, id){
+            console.log(id)
+            try {
+                const payload = (await requestCategory.loadMod.loadModelById(id))
+                console.log(payload)
+                context.commit('SET_MODEL', payload)
+            } catch (error) {
+                console.log(error.response.data)
+            }
+            
         }
   }
 }

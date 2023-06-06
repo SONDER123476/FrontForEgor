@@ -24,7 +24,6 @@ export default {
         async getCategorys({ commit }){
             try {
                 const payload = (await requestCategory.loadCat.loadCategorys())
-                console.log(payload)
                 commit('SET_CATEGORY', payload)
             } catch (error) {
                 console.log(error.response.data)

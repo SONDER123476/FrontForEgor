@@ -1,13 +1,13 @@
 <template>
     <LoginReg
-          v-if="isLoginVisible"
+          v-if="isLoginVisible && !getUser()"
           @away="awayclose"
           />
     <header>
         <div class="headerLeftMenu">
           <img class="cobraIcon" src="../assets/cobra_icon.svg">
           <button type="button" class="headerManeMenu" @click="$router.push({ name: 'modelsList', params: { categoryID : 0} })">3D Models</button>
-          <button class="headerManeMenu" @click="$router.push({ name: 'uploadPage' })">Sell 3D Models</button>
+          <button v-if="getUser()" class="headerManeMenu" @click="$router.push({ name: 'uploadPage' })">Sell 3D Models</button>
           <button class="headerManeMenu">FAQ</button>
         </div>
         <div class="headerBaner">
@@ -16,8 +16,8 @@
         <div class="headerRightMenu">
           <input class="headerInpSearch" type="text" >
           <button class="headerBtnSearch" ></button>
-          <button class="headerBtnLogin" @click="showLoginPole(), console.log(isLoginVisible)">Log In</button>
-          <button class="headerProfileBtn" @click="$router.push({ name: 'profile' })">Профиль</button>
+          <button v-if="!getUser()" class="headerBtnLogin" @click="showLoginPole()">Log In</button>
+          <button v-else class="headerBtnLogin" @click="$router.push({ name: 'profile' })">Профиль</button>
         </div>
     </header>
 </template>
@@ -25,8 +25,7 @@
 <script>
 import LoginReg from './LoginReg.vue'
 import sign_inFildState from '../mixins/sign-inFildState.js'
-// import { mapActions } from 'vuex'
-// import { mapState } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex';
 
     export default {
         name: 'headerPage',
@@ -38,13 +37,13 @@ import sign_inFildState from '../mixins/sign-inFildState.js'
             userIsLogin: false
           }
         },
-        // created() {
-          // ...mapState('userStorfe', {
-        //     user: state => state.userStore.user
-        //     })
-        // },
+        created() {
+          this.UPDATE_USER()
+        },
       
         methods: {
+          ...mapGetters('userStore', ['getUser']),
+          ...mapMutations('userStore', ['UPDATE_USER']),
           // ...mapState('userStorfe', {
           //   user: state => state.userStore.user
           //   })

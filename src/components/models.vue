@@ -55,11 +55,10 @@
                                 <li v-for="(model, index) in getAllModels()"
                                     :key="index"
                                 class="modelsCards">
-                                    <div @click="$router.push({ name: 'modelPage', params : { modelID : index}})">
+                                    <div @click="$router.push({ name: 'modelPage', params : { modelID : model.id }})">
                                         <model-card 
-                                            :img-url="model.imgUrl"
-                                            :title="model.name"   
-                                            :model-id="model.modelId"
+                                            :img-url="model.render"
+                                            :title="model.name" 
                                             :price="model.price"
                                         />
                                     </div>
@@ -217,15 +216,22 @@ export default {
     },
     created(){
         this.category = this.getCategoryById()(parseInt(this.$route.params.categoryID))
-        this.getModels()
-        console.log(this.category)
+        if (parseInt(this.$route.params.categoryID)){
+            this.loadModelById(parseInt(this.$route.params.categoryID))
+        }else {
+            this.getModels()
+        }
+        console.log(parseInt(this.$route.params.categoryID))
     },
     methods: {
         ...mapGetters({
             getCategoryById : 'storeCategorys/getCategoryById', 
             getAllModels : 'storeModels/getAllModels'
         }),
-        ...mapActions('storeModels', ['getModels']),
+        ...mapActions({
+            getModels : 'storeModels/getModels',
+            loadModelById : 'storeModels/loadModelById'
+        }),
         handleSelection() {
         // Обработка выбора опции
         console.log(this.selectedOption);

@@ -5,11 +5,11 @@
         </div>
         <div class="container">
             <div class="nodelPageImgWrapper">
-                <img class="modelPageMainImg" :src="currentImg">
+                <img class="modelPageMainImg" :src="!currentImg ? getModel().render : currentImg">
                 <div class="modelPageListImg">
                     <ul class="modelPageListImgWrapper">
-                        <li v-for="(model, index) in models" :key="index" class="modelPageSmallListImg">
-                            <img class="modelPageSmallImg" @click="setModelImg(model.imgUrl)" :src="model.imgUrl">
+                        <li v-for="(model, index) in getModel().photos" :key="index" class="modelPageSmallListImg">
+                            <img class="modelPageSmallImg" @click="setModelImg(model)" :src="model">
                         </li>
                     </ul>
                 </div>
@@ -22,20 +22,20 @@
                         <div class="modelPageSellerAndTitle">
                             <button class="modelPageSeller">
                                 <img class="modelPageSellerAvatar" src="../assets/Avatar.png">
-                                <span class="modelPageSellerNickname">Huesosick</span>
+                                <span class="modelPageSellerNickname">{{ getModel().author }}</span>
                             </button>
-                            <h3 class="modelPageTitle">{{ modelTitle }}</h3>
+                            <h3 class="modelPageTitle">{{ getModel().name }}</h3>
                         </div>
                         <div class="modelPageBuyMenu">
-                            <h4 class="modePagePrice">{{ modelPrice + "Р" }}</h4>
-                            <button class="modelPageBuyBtn">Купить</button>
+                            <h4 class="modePagePrice">{{ getModel().price + "Р" }}</h4>
+                            <button class="modelPageBuyBtn" >Купить</button>
                             <button class="modelPageAtfBtn" @click="addToFavorit()">
                                 <img :src=curAtfBtn>
                             </button>
                         </div>
                     </div>
                     <div class="modelPageSecondInfoFild">
-                        <span class="modelPageModelInfo">{{ modelInfo }}</span>
+                        <span class="modelPageModelInfo">{{ getModel().description }}</span>
                     </div>
                     <div class="modelPageThridInfoFild">
                         <div class="modePageCharactLeft">
@@ -72,6 +72,7 @@
 <script>
 import headerPart from './header.vue'
 import footerPart from './footer.vue'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
 
@@ -79,7 +80,7 @@ export default {
     components: { headerPart, footerPart},
     data() {
         return {
-            currentImg: require('../assets/categoryPlane.png'),
+            currentImg: null,
             curAtfBtn: require('../assets/modelIsNotFavorit.svg'),
             modelFavorit: false,
             modelTitle: "Всякие модели там разные",
@@ -190,10 +191,16 @@ export default {
                     name: "Риги",
                     value: false,
                 },
-            ]
+            ],
         }
     },
+
+    created(){
+        this.loadModel(parseInt(this.$route.params.modelID))
+    },
     methods: {
+        ...mapActions('storeModel', ['loadModel']),
+        ...mapGetters('storeModel', ['getModel']),
         setModelImg(value){
             this.currentImg = value
         },

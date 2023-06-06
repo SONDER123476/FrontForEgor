@@ -112,7 +112,7 @@
                     <div @click="$router.push({ name: 'modelsList', params: { categoryID : category.id }})">
                       <category-card 
                           :title="category.name"
-                          :img-url="category.imgUrl"
+                          :img-url="category.photo"
                           
                       />
                     </div>

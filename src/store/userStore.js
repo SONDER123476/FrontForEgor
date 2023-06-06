@@ -1,19 +1,40 @@
 import signinApi from '../api/index'
 import jwt_decode from "jwt-decode"
+import Cookies from 'js-cookie'
 
 export default {
     namespaced: true,
     state() { 
         return {
             user: null,
+            token: localStorage.getItem('user') || null,
+            wallet: 0,
+        }
+    },
+    
+    getters: {
+        getUser: (state) => {
+            return state.user
         }
     },
     mutations: {
         SET_USER(state, payload) {
-            state.user = jwt_decode(payload.data.token)
+            state.user = jwt_decode(payload.data.token),
+            state.token = payload.data.token
+            
         },
         DELETE_USER(state){
             state.user = null
+            state.token = null
+            Cookies.remove('user')
+        },
+        UPDATE_USER: (state) => {
+            try{
+                state.user = jwt_decode(localStorage.getItem('user'))
+            }
+            catch{
+                state.user = null
+            }
         }
     },
     actions: {
@@ -21,10 +42,10 @@ export default {
 			try {
 				const payload = (await signinApi.auth.signUp(form))
 				localStorage.setItem('user', JSON.stringify(payload.data.token))
+                Cookies.set('token', payload.data.token, { expires: 1, path: '/' })
                 context.commit('SET_USER', payload)
 			} catch(error) {
 				console.log(error.response.payload)
-               
 			}
 		},
         async logIn(context, form) {
@@ -41,33 +62,17 @@ export default {
             commit('DELETE_USER')
 			localStorage.removeItem('user')
 		},
-        // async auth({commit, dispatch}){
-        //         try {
-        //           const payload = await fetch('http://localhost:5000/api/user/auth', {
-        //             method: 'GET',
-        //             headers: {
-        //                 'Authorization': 'Bearer ' + localStorage.getItem('user'),
-        //             },
-        //             body: {}
-        //           })  
-        //           console.log(payload.data.token)
-        //           localStorage.setItem('user', payload.data.token)
-        //           commit('SET_USER', payload)
-        //         } catch (error) {
-        //           if (error.response && error.response.status === 401) {
-        //             // Обработка ошибки 401 здесь
-        //             console.log('Ошибка авторизации', error)
-        //             dispatch('logOut')
-        //           } else {
-        //             // Обработка других ошибок здесь
-        //             console.log('Произошла ошибка', error)
-        //             dispatch('logOut')
-        //           }
-        //         }
-        //     //   jwtDecode(token) {
-        //     //     // Ваш код декодирования JWT токена
-        //     //   }
-        // }
+        async walletUpdate(context, count) {
+
+            try{
+                console.log(count)
+                await signinApi.wallet.addMoney({ money: count, UserId : 3 });
+            } catch(error) {
+                console.log('dsfsd')
+                console.log(error.response)
+            }
+            
+        }
     
     }
 }

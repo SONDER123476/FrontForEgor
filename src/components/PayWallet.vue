@@ -5,7 +5,7 @@
           <h2 class="Popoln">Пополнение средств</h2>
           <input type="number" v-model="amount" placeholder="Введите сумму">
           <div class="modal-buttons">
-            <button class="btn2" @click="closePopup" >Пополнить</button>
+            <button class="btn2" @click="addMoney" >Пополнить</button>
             <button class ="btn2" @click="closePopup">Отмена</button>
           </div>
         </div>
@@ -14,13 +14,28 @@
   </template>
   
   <script>
+import { mapActions } from 'vuex';
+
   export default{
     name: "pay-wallet",
+    amount: null,
     props: {},
     data(){
       return{}
     },
     methods: {
+      ...mapActions('userStore',['walletUpdate']),
+      addMoney(){
+        console.log(this.amount)
+        
+          this.walletUpdate(this.amount)
+        if (this.amout > 0){
+          this.closePopup()
+        } else {
+          console.log(this.amount)
+        }
+        
+      },
       closePopup(){
         this.$emit('closePopup')
       }

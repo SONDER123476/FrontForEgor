@@ -8,6 +8,9 @@ export default function(signinApi) {
         },
         auth(){
             return signinApi.get('user/auth' )
+        },
+        addMoney(payload){
+            return signinApi.post('user/addmoney', payload)
         }
     }
 }

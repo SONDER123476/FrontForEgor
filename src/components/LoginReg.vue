@@ -22,7 +22,7 @@
 								<label class="sdf" for="chk" aria-hidden="true">Login</label>
 								<input class="gg" type="email" name="email" placeholder="Email" required="" v-model="formLogIn.email">
 								<input class="gg" type="password" name="pswd" placeholder="Password" required="" v-model="formLogIn.password">
-								<button class="sign" @click.prevent="huets()">Login</button>
+								<button class="sign" @click.prevent="logInBtn()">Login</button>
 							</form>
 						</div>
 				</div>
@@ -58,14 +58,12 @@ import { mapActions } from 'vuex';
             this.$emit('away');
 
         },
-		huets(){
-			console.log(this.form.name)
-		},
 		signUpBtn() {
 			this.signUp(this.formSignUp)
 		},
 		logInBtn(){
 			this.logIn(this.formLogIn)
+			console.log(this.formLogIn)
 		}
     }
 }

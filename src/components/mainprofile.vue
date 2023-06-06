@@ -29,7 +29,7 @@
         <div class="AvatarBlock"><img class="Avatar" src="../assets/Avatar.png"></div>
 
         <div class="InfoBlock">
-          <a class="TopBlocktext">Nickname</a>
+          <a class="TopBlocktext">{{  }}</a>
           <a class="TopBlocktext">N models sold</a>
           <a class="TopBlocktext">N reputation</a> 
         </div>
@@ -90,7 +90,7 @@
         v-if="isProfileVisable"
         >
           <div class="InfoBlockBottom">
-            <a class="TopBlocktext1">FullName:</a>
+            <a class="TopBlocktext1">FullName: </a>
             <a class="TopBlocktext1">Email:</a>
             <a class="TopBlocktext1">PhoneNumber</a> 
             <a class="TopBlocktext1">Gender:</a>
@@ -157,6 +157,7 @@ import headerPart from './header.vue'
 import footerPart from './footer.vue'
 import CheckOut from './CheckOut.vue'
 import PayWallet from './PayWallet.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'ProfilePage',
@@ -252,6 +253,7 @@ export default {
     },
   },
   methods: {
+    ...mapGetters('userStore', ['getUser']),
     showPayWallet(){
       this.isPayWallet = true;
     },

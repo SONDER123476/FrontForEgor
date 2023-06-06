@@ -2,13 +2,14 @@
   <div class="v-popup">
     <p class="message">Открыть?</p>
     <div class="options">
-      <button class="btn" @click="$router.push({ name: 'mainPage' })">Yes</button>
+      <button class="btn" @click="$router.push({ name: 'mainPage' }), logOut()">Yes</button>
       <button class="btn" @click="closePopup">No</button>
   </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
   export default{
     name: "v-popup",
     props: {},
@@ -16,6 +17,7 @@
       return{}
     },
     methods: {
+      ...mapActions('userStore', ['logOut']),
       closePopup(){
         this.$emit('closePopup')
       }

@@ -10,13 +10,13 @@
                     <div class="uploadNameFild">
                         <span class="uploadTitles">Название</span>
                         <div class="uploadIntContainer">
-                            <input class="uploadInpName" placeholder="Введите название">
+                            <input class="uploadInpName" v-model="form.name" placeholder="Введите название">
                         </div>
                     </div>
                     <div class="uploadPriceFild">
                         <span class="uploadTitles">Цена</span>
                         <div class="uploadIntContainer">
-                            <input class="uploadInpPrice" placeholder="Введите стоимость">
+                            <input class="uploadInpPrice" v-model="form.price" placeholder="Введите стоимость">
                         </div>
                         
                     </div>
@@ -24,14 +24,14 @@
                 </div>
                 <div class="uploadInpCategory">
                     <span class="uploadTitles">Выберите категорию</span>
-
+                    <input class="uploadInpPrice" v-model="form.typeId" placeholder="Введите категорию">
 
                 </div>
                 <div class="uploadFileFild">
                     <span class="uploadTitles">Файл модлеи</span>
                     <div class="uploadIntContainer">
-                        <input class="uploadFileInp" placeholder="Выберите файл в формате .zip, .rar">
-                        <button class="uploadUpBtn">Загрузить</button>
+                        <input class="uploadFileInp" placeholder="Выберите файл в формате .zip, .rar" type="file" ref="fileInput" @change="handleFileChange">
+                        <button class="uploadUpBtn" @click="loadFile">Загрузить</button>
                     </div>
                 </div>
                 <div class="uploadCountPoliFild">
@@ -49,14 +49,14 @@
                 <div class="uploadRendFild">
                     <span class="uploadTitles">Изображение для превью</span>
                     <div class="uploadIntContainer">
-                        <input class="uploadRendInp" placeholder="Выберите файл в формате .jpeg, .png">
+                        <input class="uploadRendInp" placeholder="Выберите файл в формате .jpeg, .png" type="file" ref="fileInput" @change="handleRenderChange">
                         <button class="uploadUpBtn">Загрузить</button>
                     </div>
                 </div>
                 <div class="uploadPicFild">
                     <span class="uploadTitles">Изображения модели</span>
                     <div class="uploadIntContainer">
-                        <input class="uploadPicInp" placeholder="Выберите файл в формате .jpeg, .png">
+                        <input class="uploadPicInp" placeholder="Выберите файл в формате .jpeg, .png" type="file" multiple @change="handlePhotoChange">
                         <button class="uploadUpBtn">Загрузить</button>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                     </div>
                     <div class="uploadSendingFild">
                         <div class="uploadInfContainer">
-                            <button class="uploadSenModel">Отправить на модерацию</button>
+                            <button class="uploadSenModel" @click="loadModel()">Отправить на модерацию</button>
                             <input type="checkbox" class="uploadAcceptChk">
                             <span class="uploadTitles">Я принимаю <a class="uploadComditionRef">условия пользования для авторов</a></span>
                         </div>
@@ -113,15 +113,55 @@
 <script>
 import headerPart from './header.vue';
 import footerPart from './footer.vue';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
     name: 'uploadModelPage',
     components: { headerPart, footerPart },
     data() {
         return {
-
+            loadedFile: null,
+            form: {
+                name: null,
+                author: null,
+                authorId: null,
+                price: null,
+                typeId: null,
+                render: null,
+                file_model: null,
+                photos: [],
+            }
         }
     },
+    
+
+    methods:{
+        ...mapGetters('userStore', ['getUser']),
+        ...mapActions('storeModel', ['uploadModelFile']),
+        handleFileChange(event) {
+      const file = event.target.files[0];
+      this.form.file_model = file;
+    },
+    handleRenderChange(event){
+        const file = event.target.files[0];
+        this.form.render = file;
+    },
+    handlePhotoChange(event){
+        const files = event.target.files;
+        for (let i = 0; i < files.length; i++) {
+        this.form.photos.push(files[i]);
+      }
+    },
+    loadModel(){
+        this.form.author = this.getUser().name
+        this.form.authorId = this.getUser().id
+        console.log(this.form)
+        this.uploadModelFile(this.form)
+    },
+    loadFile() {
+      this.$refs.fileInput.click();
+    }
+    }
 }
 </script>
 
