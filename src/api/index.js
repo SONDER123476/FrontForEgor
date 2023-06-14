@@ -1,5 +1,4 @@
 import requestForm from "./requestForm"
-import requestFormForSignUp from "./requestFormForSignUp"
 import authModule from "./auth"
 import loadCategorys from "./loadCategorys"
 import loadModels from "./loadModels"
@@ -8,7 +7,7 @@ import sellModel from "./sellModel"
 
 export default {
     auth: authModule(requestForm),
-    wallet: walletModul(requestFormForSignUp),
+    wallet: walletModul(requestForm),
     loadCat: loadCategorys(requestForm),
     loadMod: loadModels(requestForm),
     uploadModel: sellModel(requestForm)

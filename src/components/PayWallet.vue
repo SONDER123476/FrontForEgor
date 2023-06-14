@@ -29,12 +29,8 @@ import { mapActions } from 'vuex';
         console.log(this.amount)
         
           this.walletUpdate(this.amount)
-        if (this.amout > 0){
-          this.closePopup()
-        } else {
-          console.log(this.amount)
-        }
         
+        this.closePopup()
       },
       closePopup(){
         this.$emit('closePopup')

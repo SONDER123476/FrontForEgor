@@ -97,7 +97,7 @@
                     </div>
                     <div class="uploadSendingFild">
                         <div class="uploadInfContainer">
-                            <button class="uploadSenModel" @click="loadModel()">Отправить на модерацию</button>
+                            <button class="uploadSenModel" >Отправить на модерацию</button>
                             <input type="checkbox" class="uploadAcceptChk">
                             <span class="uploadTitles">Я принимаю <a class="uploadComditionRef">условия пользования для авторов</a></span>
                         </div>

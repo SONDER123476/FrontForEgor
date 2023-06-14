@@ -196,11 +196,12 @@ export default {
     },
 
     created(){
-        this.loadModel(parseInt(this.$route.params.modelID))
+        console.log(this.$route.params.modelID)
+        this.loadModelById(parseInt(this.$route.params.modelID))
     },
     methods: {
-        ...mapActions('storeModel', ['loadModel']),
-        ...mapGetters('storeModel', ['getModel']),
+        ...mapActions('storeModelById', ['loadModelById']),
+        ...mapGetters('storeModelById', ['getModel']),
         setModelImg(value){
             this.currentImg = value
         },

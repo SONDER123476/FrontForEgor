@@ -66,7 +66,7 @@ export default {
 
             try{
                 console.log(count)
-                await signinApi.wallet.addMoney({ money: count, UserId : 3 });
+                await signinApi.wallet.addMoney({ money: count, UserId : context.state.user.id });
             } catch(error) {
                 console.log('dsfsd')
                 console.log(error.response)

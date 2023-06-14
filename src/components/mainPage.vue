@@ -7,7 +7,7 @@
         <div class="welcToHydra">
           <h2>Wellcome to <br>3D Hydra</h2>
         </div>
-        <button class="categoryMP" @click="setType ()">Category</button>
+        <button class="categoryMP" >Category</button>
     </div>
     <div class="info">
       <div class="container">  

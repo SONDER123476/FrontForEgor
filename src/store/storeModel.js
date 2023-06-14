@@ -4,7 +4,7 @@ export default {
     namespaced: true,
     state() { 
         return {
-            model:[]
+            model: []
         }
     },
     getters: {
@@ -18,8 +18,9 @@ export default {
         }
     },
     actions: {
-        async loadModel(context, id){
+        async loadModelById(context, id){
             console.log(id)
+            console.log('sadasda')
             try {
                 const payload = (await requestCategory.loadMod.loadModel(id))
                 console.log(payload)
